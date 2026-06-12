@@ -6,7 +6,7 @@ on:
   workflow_dispatch: {}
 
 permissions:
-  contents: write # for commit status updates
+  contents: write
 
 jobs:
   digest:
