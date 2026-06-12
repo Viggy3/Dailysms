@@ -1,0 +1,34 @@
+name: daily-digest
+
+on:
+  schedule:
+    - cron: '0 7 * * *'  # every day at 7am
+
+    workflow_dispatch: {}
+
+permissions:
+  contents: write # for commit status updates
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.12
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run daily digest
+        env:
+          # Load all .env variables into the environment for the script to use.
+          $(cat .env | sed 's/^/ /' | xargs)
+        run: python daily_digest.py
+      - name: persist seen.json back to repo
+        run: |
+          git config user.name "digest-bot"
+          git config user.email "digest-bot@users.noreply.github.com"
+          git add seen.json
+          git diff --staged --quiet || git commit -m "Update seen.json with latest job postings"
+          git push
