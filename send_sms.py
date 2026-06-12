@@ -13,13 +13,13 @@ twilio_no = os.environ["TWILIO_FROM_NUMBER"]
 my_no = os.environ["MY_NUMBER"]
 
 
-
-
 def send(body: str) -> str:
     if len(body) > 1600:
         raise ValueError("Message body exceeds Twilio's 1600 character limit.")
     if len(body) > 320:
-        raise ValueError("Message body exceeds 320 character limit for a single SMS. Consider splitting into multiple messages.")
+        print(
+            f"Warning: Message body is {len(body)} characters long, which exceeds the 320 character limit for a single SMS. It may be split into multiple messages."
+        )
     message = client.messages.create(
         body=body,
         from_=twilio_no,

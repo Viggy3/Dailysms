@@ -1,0 +1,445 @@
+{
+  "_comment": "UNVERIFIED candidates - run verify_watchlist.py to test all slugs and write the clean watchlist.json. Wrong slugs are expected; the verifier prunes them.",
+  "companies": [
+    {
+      "name": "Monzo",
+      "type": "greenhouse",
+      "id": "monzo"
+    },
+    {
+      "name": "Wise",
+      "type": "greenhouse",
+      "id": "transferwise"
+    },
+    {
+      "name": "GoCardless",
+      "type": "greenhouse",
+      "id": "gocardless"
+    },
+    {
+      "name": "TrueLayer",
+      "type": "greenhouse",
+      "id": "truelayer"
+    },
+    {
+      "name": "Checkout.com",
+      "type": "greenhouse",
+      "id": "checkout"
+    },
+    {
+      "name": "Thought Machine",
+      "type": "greenhouse",
+      "id": "thoughtmachine"
+    },
+    {
+      "name": "Deliveroo",
+      "type": "greenhouse",
+      "id": "deliveroo"
+    },
+    {
+      "name": "Skyscanner",
+      "type": "greenhouse",
+      "id": "skyscanner"
+    },
+    {
+      "name": "Snyk",
+      "type": "greenhouse",
+      "id": "snyk"
+    },
+    {
+      "name": "Elwood Technologies",
+      "type": "greenhouse",
+      "id": "elwoodtechnologies"
+    },
+    {
+      "name": "Adaptive Financial",
+      "type": "greenhouse",
+      "id": "adaptivefinancialconsulting"
+    },
+    {
+      "name": "LHV Bank",
+      "type": "greenhouse",
+      "id": "lhvuk"
+    },
+    {
+      "name": "Form3",
+      "type": "greenhouse",
+      "id": "form3"
+    },
+    {
+      "name": "Yapily",
+      "type": "greenhouse",
+      "id": "yapily"
+    },
+    {
+      "name": "Codat",
+      "type": "greenhouse",
+      "id": "codat"
+    },
+    {
+      "name": "Quantexa",
+      "type": "greenhouse",
+      "id": "quantexa"
+    },
+    {
+      "name": "Featurespace",
+      "type": "greenhouse",
+      "id": "featurespace"
+    },
+    {
+      "name": "OakNorth",
+      "type": "greenhouse",
+      "id": "oaknorth"
+    },
+    {
+      "name": "ClearBank",
+      "type": "greenhouse",
+      "id": "clearbank"
+    },
+    {
+      "name": "Freetrade",
+      "type": "greenhouse",
+      "id": "freetrade"
+    },
+    {
+      "name": "PensionBee",
+      "type": "greenhouse",
+      "id": "pensionbee"
+    },
+    {
+      "name": "Curve",
+      "type": "greenhouse",
+      "id": "curve"
+    },
+    {
+      "name": "Tide",
+      "type": "greenhouse",
+      "id": "tide"
+    },
+    {
+      "name": "Plum",
+      "type": "greenhouse",
+      "id": "plum"
+    },
+    {
+      "name": "Zilch",
+      "type": "greenhouse",
+      "id": "zilch"
+    },
+    {
+      "name": "SumUp",
+      "type": "greenhouse",
+      "id": "sumup"
+    },
+    {
+      "name": "Paddle",
+      "type": "greenhouse",
+      "id": "paddle"
+    },
+    {
+      "name": "Zego",
+      "type": "greenhouse",
+      "id": "zego"
+    },
+    {
+      "name": "Marshmallow",
+      "type": "greenhouse",
+      "id": "marshmallow"
+    },
+    {
+      "name": "Onfido",
+      "type": "greenhouse",
+      "id": "onfido"
+    },
+    {
+      "name": "Improbable",
+      "type": "greenhouse",
+      "id": "improbable"
+    },
+    {
+      "name": "Wayve",
+      "type": "greenhouse",
+      "id": "wayve"
+    },
+    {
+      "name": "Graphcore",
+      "type": "greenhouse",
+      "id": "graphcore"
+    },
+    {
+      "name": "PolyAI",
+      "type": "greenhouse",
+      "id": "polyai"
+    },
+    {
+      "name": "Synthesia",
+      "type": "greenhouse",
+      "id": "synthesia"
+    },
+    {
+      "name": "Faculty",
+      "type": "greenhouse",
+      "id": "faculty"
+    },
+    {
+      "name": "Tractable",
+      "type": "greenhouse",
+      "id": "tractable"
+    },
+    {
+      "name": "DeepMind",
+      "type": "greenhouse",
+      "id": "deepmind"
+    },
+    {
+      "name": "Stability AI",
+      "type": "greenhouse",
+      "id": "stabilityai"
+    },
+    {
+      "name": "Trainline",
+      "type": "greenhouse",
+      "id": "trainline"
+    },
+    {
+      "name": "Gousto",
+      "type": "greenhouse",
+      "id": "gousto"
+    },
+    {
+      "name": "Lyst",
+      "type": "greenhouse",
+      "id": "lyst"
+    },
+    {
+      "name": "Depop",
+      "type": "greenhouse",
+      "id": "depop"
+    },
+    {
+      "name": "Zoopla",
+      "type": "greenhouse",
+      "id": "zoopla"
+    },
+    {
+      "name": "Beamery",
+      "type": "greenhouse",
+      "id": "beamery"
+    },
+    {
+      "name": "Attest",
+      "type": "greenhouse",
+      "id": "attest"
+    },
+    {
+      "name": "Huma",
+      "type": "greenhouse",
+      "id": "huma"
+    },
+    {
+      "name": "Babylon",
+      "type": "greenhouse",
+      "id": "babylonhealth"
+    },
+    {
+      "name": "ThoughtWorks",
+      "type": "greenhouse",
+      "id": "thoughtworks"
+    },
+    {
+      "name": "Made Tech",
+      "type": "greenhouse",
+      "id": "madetech"
+    },
+    {
+      "name": "ComplyAdvantage",
+      "type": "greenhouse",
+      "id": "complyadvantage"
+    },
+    {
+      "name": "Starling Bank GH",
+      "type": "greenhouse",
+      "id": "starlingbank"
+    },
+    {
+      "name": "Revolut GH",
+      "type": "greenhouse",
+      "id": "revolut"
+    },
+    {
+      "name": "Intercom",
+      "type": "greenhouse",
+      "id": "intercom"
+    },
+    {
+      "name": "Plaid",
+      "type": "greenhouse",
+      "id": "plaid"
+    },
+    {
+      "name": "Datadog",
+      "type": "greenhouse",
+      "id": "datadog"
+    },
+    {
+      "name": "Cloudflare",
+      "type": "greenhouse",
+      "id": "cloudflare"
+    },
+    {
+      "name": "Stripe GH",
+      "type": "greenhouse",
+      "id": "stripe"
+    },
+    {
+      "name": "Twilio GH",
+      "type": "greenhouse",
+      "id": "twilio"
+    },
+    {
+      "name": "Zopa",
+      "type": "lever",
+      "id": "zopa"
+    },
+    {
+      "name": "Octopus Energy",
+      "type": "lever",
+      "id": "octopusenergy"
+    },
+    {
+      "name": "Moneybox",
+      "type": "lever",
+      "id": "moneybox"
+    },
+    {
+      "name": "Cleo",
+      "type": "lever",
+      "id": "cleo-ai"
+    },
+    {
+      "name": "Palantir",
+      "type": "lever",
+      "id": "palantir"
+    },
+    {
+      "name": "Spotify",
+      "type": "lever",
+      "id": "spotify"
+    },
+    {
+      "name": "Kraken Tech",
+      "type": "lever",
+      "id": "kraken.tech"
+    },
+    {
+      "name": "Accurx",
+      "type": "lever",
+      "id": "accurx"
+    },
+    {
+      "name": "Birdie",
+      "type": "lever",
+      "id": "birdie-care"
+    },
+    {
+      "name": "Netlify",
+      "type": "lever",
+      "id": "netlify"
+    },
+    {
+      "name": "AND Digital",
+      "type": "lever",
+      "id": "anddigital"
+    },
+    {
+      "name": "PostHog",
+      "type": "ashby",
+      "id": "posthog"
+    },
+    {
+      "name": "ElevenLabs",
+      "type": "ashby",
+      "id": "elevenlabs"
+    },
+    {
+      "name": "Supabase",
+      "type": "ashby",
+      "id": "supabase"
+    },
+    {
+      "name": "incident.io",
+      "type": "ashby",
+      "id": "incident-io"
+    },
+    {
+      "name": "Juro",
+      "type": "ashby",
+      "id": "juro"
+    },
+    {
+      "name": "Linear",
+      "type": "ashby",
+      "id": "linear"
+    },
+    {
+      "name": "Railway",
+      "type": "ashby",
+      "id": "railway"
+    },
+    {
+      "name": "Monzo Ashby",
+      "type": "ashby",
+      "id": "monzo"
+    },
+    {
+      "name": "Starling Bank",
+      "type": "careers_page",
+      "id": "https://www.starlingbank.com/careers/"
+    },
+    {
+      "name": "TreasurySpring",
+      "type": "careers_page",
+      "id": "https://treasuryspring.com/careers"
+    },
+    {
+      "name": "Softwire",
+      "type": "careers_page",
+      "id": "https://www.softwire.com/careers/"
+    },
+    {
+      "name": "Scott Logic",
+      "type": "careers_page",
+      "id": "https://www.scottlogic.com/careers"
+    },
+    {
+      "name": "TPP",
+      "type": "careers_page",
+      "id": "https://tpp-careers.com/"
+    },
+    {
+      "name": "G-Research",
+      "type": "careers_page",
+      "id": "https://www.gresearch.com/vacancies/"
+    },
+    {
+      "name": "Ocado Technology",
+      "type": "careers_page",
+      "id": "https://careers.ocadogroup.com/our-teams/technology"
+    },
+    {
+      "name": "FreeAgent",
+      "type": "workable",
+      "id": "freeagent"
+    },
+    {
+      "name": "Mews",
+      "type": "workable",
+      "id": "mews"
+    },
+    {
+      "name": "Zava",
+      "type": "workable",
+      "id": "zava"
+    }
+  ]
+}

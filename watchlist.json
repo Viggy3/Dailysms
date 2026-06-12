@@ -1,0 +1,198 @@
+{
+  "_comment": "Verified by verify_watchlist.py. Add new candidates to watchlist_candidates.json and re-run.",
+  "companies": [
+    {
+      "name": "Monzo",
+      "type": "greenhouse",
+      "id": "monzo"
+    },
+    {
+      "name": "GoCardless",
+      "type": "greenhouse",
+      "id": "gocardless"
+    },
+    {
+      "name": "TrueLayer",
+      "type": "greenhouse",
+      "id": "truelayer"
+    },
+    {
+      "name": "Skyscanner",
+      "type": "greenhouse",
+      "id": "skyscanner"
+    },
+    {
+      "name": "Elwood Technologies",
+      "type": "greenhouse",
+      "id": "elwoodtechnologies"
+    },
+    {
+      "name": "Adaptive Financial",
+      "type": "greenhouse",
+      "id": "adaptivefinancialconsulting"
+    },
+    {
+      "name": "LHV Bank",
+      "type": "greenhouse",
+      "id": "lhvuk"
+    },
+    {
+      "name": "Form3",
+      "type": "greenhouse",
+      "id": "form3"
+    },
+    {
+      "name": "Tide",
+      "type": "greenhouse",
+      "id": "tide"
+    },
+    {
+      "name": "SumUp",
+      "type": "greenhouse",
+      "id": "sumup"
+    },
+    {
+      "name": "Wayve",
+      "type": "greenhouse",
+      "id": "wayve"
+    },
+    {
+      "name": "Graphcore",
+      "type": "greenhouse",
+      "id": "graphcore"
+    },
+    {
+      "name": "PolyAI",
+      "type": "greenhouse",
+      "id": "polyai"
+    },
+    {
+      "name": "DeepMind",
+      "type": "greenhouse",
+      "id": "deepmind"
+    },
+    {
+      "name": "Stability AI",
+      "type": "greenhouse",
+      "id": "stabilityai"
+    },
+    {
+      "name": "ThoughtWorks",
+      "type": "greenhouse",
+      "id": "thoughtworks"
+    },
+    {
+      "name": "ComplyAdvantage",
+      "type": "greenhouse",
+      "id": "complyadvantage"
+    },
+    {
+      "name": "Intercom",
+      "type": "greenhouse",
+      "id": "intercom"
+    },
+    {
+      "name": "Datadog",
+      "type": "greenhouse",
+      "id": "datadog"
+    },
+    {
+      "name": "Cloudflare",
+      "type": "greenhouse",
+      "id": "cloudflare"
+    },
+    {
+      "name": "Stripe GH",
+      "type": "greenhouse",
+      "id": "stripe"
+    },
+    {
+      "name": "Twilio GH",
+      "type": "greenhouse",
+      "id": "twilio"
+    },
+    {
+      "name": "Zopa",
+      "type": "lever",
+      "id": "zopa"
+    },
+    {
+      "name": "Palantir",
+      "type": "lever",
+      "id": "palantir"
+    },
+    {
+      "name": "Spotify",
+      "type": "lever",
+      "id": "spotify"
+    },
+    {
+      "name": "PostHog",
+      "type": "ashby",
+      "id": "posthog"
+    },
+    {
+      "name": "ElevenLabs",
+      "type": "ashby",
+      "id": "elevenlabs"
+    },
+    {
+      "name": "Supabase",
+      "type": "ashby",
+      "id": "supabase"
+    },
+    {
+      "name": "Juro",
+      "type": "ashby",
+      "id": "juro"
+    },
+    {
+      "name": "Linear",
+      "type": "ashby",
+      "id": "linear"
+    },
+    {
+      "name": "Railway",
+      "type": "ashby",
+      "id": "railway"
+    },
+    {
+      "name": "Starling Bank",
+      "type": "careers_page",
+      "id": "https://www.starlingbank.com/careers/"
+    },
+    {
+      "name": "TreasurySpring",
+      "type": "careers_page",
+      "id": "https://treasuryspring.com/careers"
+    },
+    {
+      "name": "Softwire",
+      "type": "careers_page",
+      "id": "https://www.softwire.com/careers/"
+    },
+    {
+      "name": "Scott Logic",
+      "type": "careers_page",
+      "id": "https://www.scottlogic.com/careers"
+    },
+    {
+      "name": "TPP",
+      "type": "careers_page",
+      "id": "https://tpp-careers.com/"
+    },
+    {
+      "name": "G-Research",
+      "type": "careers_page",
+      "id": "https://www.gresearch.com/vacancies/"
+    }
+  ],
+  "title_keywords": [
+    "junior",
+    "graduate",
+    "entry level",
+    "entry-level",
+    "associate software",
+    "early career"
+  ]
+}
