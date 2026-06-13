@@ -57,7 +57,9 @@ def claude_fit_filter(jobs):
             "You filter job postings for this candidate:\n" + PROFILE + "\n\n"
             "Score each posting 1-10 for fit. Output an SMS digest, max 320 "
             "characters: only postings scoring 7+, best first, format "
-            "'Company: Title (score/10)'. One short overall line at the end. "
+            "'Company: Title (score/10)'. One short overall line at the end."
+            "Ensure that the output is concise and suitable for an SMS message."
+            "Avoid any texts that have long unicode characters or emojis. "
             "If nothing scores 7+, output exactly: NO_GOOD_MATCHES"
         ),
         messages=[{"role": "user", "content": json.dumps(jobs)}],
