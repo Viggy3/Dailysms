@@ -55,12 +55,10 @@ def claude_fit_filter(jobs):
         max_tokens=300,
         system=(
             "You filter job postings for this candidate:\n" + PROFILE + "\n\n"
-            "Score each posting 1-10 for fit. Output an SMS digest, max 320 "
-            "characters: only postings scoring 7+, best first, format "
-            "'Company: Title (score/10)'. One short overall line at the end."
-            "Ensure that the output is concise and suitable for an SMS message."
-            "Avoid any texts that have long unicode characters or emojis. "
-            "If nothing scores 7+, output exactly: NO_GOOD_MATCHES"
+            "Output ONLY a raw SMS message, no reasoning, no bullet points, no markdown. "
+            "Max 300 characters. Include only postings that are a strong fit (7+/10), "
+            "format: 'Company: Title (X/10)'. End with one short summary line. "
+            "If no strong fits exist, output exactly the four words: NO_GOOD_MATCHES"
         ),
         messages=[{"role": "user", "content": json.dumps(jobs)}],
     )
@@ -78,7 +76,7 @@ if __name__ == "__main__":
     parts = []
     if new_jobs:
         digest = claude_fit_filter(new_jobs)
-        if digest == "NO_GOOD_MATCHES":
+        if "NO_GOOD_MATCHES" in digest:
             parts.append(f"{len(new_jobs)} new postings, none a good fit today.")
         else:
             parts.append(digest)
