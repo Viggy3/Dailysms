@@ -2,7 +2,7 @@ name: daily-digest
 
 on:
   schedule:
-    - cron: "0 6 * * *" # every day at 7am
+    - cron: "0 5 * * *" # every day at 7am
   workflow_dispatch: {}
 
 permissions:
