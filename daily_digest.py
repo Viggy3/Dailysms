@@ -20,13 +20,14 @@ from pathlib import Path
 from anthropic import Anthropic
 from dotenv import load_dotenv
 
-from job_sources import fetch_all
-from send_sms import send
-
 load_dotenv()
 
 HERE = Path(__file__).parent
 SEEN_FILE = HERE / "seen.json"
+
+import calpar
+from job_sources import fetch_all
+from send_sms import send
 
 # The fit-filter is only as good as this profile. Update it as you grow.
 PROFILE = """\
@@ -56,13 +57,29 @@ def claude_fit_filter(jobs):
         system=(
             "You filter job postings for this candidate:\n" + PROFILE + "\n\n"
             "Output ONLY a raw SMS message, no reasoning, no bullet points, no markdown. "
-            "Max 300 characters. Include only postings that are a strong fit (7+/10), "
+            "Max 300 characters. Include only postings that are a strong fit (6+/10), "
             "format: 'Company: Title (X/10)'. End with one short summary line. "
             "If no strong fits exist, output exactly the four words: NO_GOOD_MATCHES"
         ),
         messages=[{"role": "user", "content": json.dumps(jobs)}],
     )
     return response.content[0].text.strip()
+
+
+def calendar_summary(days_ahead=1):
+    """Format today's events as one SMS-friendly block."""
+    events = calpar.fetch_all_events(days_ahead)
+    if not events:
+        return None  # None = nothing to add, caller decides
+    lines = []
+    for e in events:
+        p = calpar.parse_event(e)
+        if p["all_day"]:
+            prefix = "All day"
+        else:
+            prefix = f"{p['start'][11:16]} - {p['end'][11:16]}"
+        lines.append(f"{prefix} {p['title']}")
+    return "Appointments:\n" + "\n".join(lines)
 
 
 if __name__ == "__main__":
@@ -83,6 +100,11 @@ if __name__ == "__main__":
     else:
         parts.append("No new postings today.")
 
+    cal = calendar_summary()
+    print(f"calendar summary: {cal if cal else '(none)'}")
+    if cal:
+        parts.append(cal)
+
     tasks_file = HERE / "tasks.txt"
     if tasks_file.exists() and tasks_file.read_text().strip():
         parts.append("Today: " + tasks_file.read_text().strip())
@@ -93,5 +115,7 @@ if __name__ == "__main__":
     # --- deliver (the only send decision in the file) ---
     if dry:
         print("(dry run — not sending)")
+        print(f"--- message ---\n{message}\n---------------")
+        print(len(message), "characters")
     else:
         send(message)
