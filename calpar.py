@@ -20,7 +20,7 @@ def fetch_events(calendar_id, days_ahead=1, max_results=20):
         service.events()
         .list(
             calendarId=calendar_id,
-            timeMin=now.isoformat(),
+            timeMin=start.isoformat(),
             timeMax=end.isoformat(),
             maxResults=max_results,
             singleEvents=True,
