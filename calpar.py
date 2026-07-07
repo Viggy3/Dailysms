@@ -13,6 +13,7 @@ def fetch_events(calendar_id, days_ahead=1, max_results=20):
     """Fetch events from ONE calendar."""
     service = build("calendar", "v3", credentials=get_credentials())
     now = datetime.now(TZ)
+    start = datetime.combine(now.date(), datetime.min.time(), tzinfo=TZ)
     end = now + timedelta(days=days_ahead)
 
     response = (
