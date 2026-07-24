@@ -4,6 +4,9 @@ from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo
 from icalendar import Calendar
 import recurring_ical_events
+from dotenv import load_dotenv
+
+load_dotenv()
 
 LONDON = ZoneInfo("Europe/London")
 
@@ -46,6 +49,8 @@ def fetch_calendar() -> list[str]:
 
 
 if __name__ == "__main__":
+    import os
+
+    print("URLs:", os.environ.get("GCAL_ICS_URLS", "NOT SET"))
     events = fetch_calendar()
-    for e in events:
-        print(e)
+    print("Events:", events)
