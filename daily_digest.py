@@ -25,7 +25,7 @@ load_dotenv()
 HERE = Path(__file__).parent
 SEEN_FILE = HERE / "seen.json"
 
-import calpar
+from gcal import fetch_calendar
 from job_sources import fetch_all
 from send_sms import send
 
@@ -52,8 +52,8 @@ def claude_fit_filter(jobs):
     """One Claude call: score all new jobs against my profile, draft the SMS."""
     client = Anthropic()
     response = client.messages.create(
-        model="claude-haiku-4-5-20251001",
-        max_tokens=300,
+        model="claude-sonnet-4-6",
+        max_tokens=400,
         system=(
             "You filter job postings for this candidate:\n" + PROFILE + "\n\n"
             "Output ONLY a raw SMS message, no reasoning, no bullet points, no markdown. "
@@ -64,22 +64,6 @@ def claude_fit_filter(jobs):
         messages=[{"role": "user", "content": json.dumps(jobs)}],
     )
     return response.content[0].text.strip()
-
-
-def calendar_summary(days_ahead=1):
-    """Format today's events as one SMS-friendly block."""
-    events = calpar.fetch_all_events(days_ahead)
-    if not events:
-        return None  # None = nothing to add, caller decides
-    lines = []
-    for e in events:
-        p = calpar.parse_event(e)
-        if p["all_day"]:
-            prefix = "All day"
-        else:
-            prefix = f"{p['start'][11:16]} - {p['end'][11:16]}"
-        lines.append(f"{prefix} {p['title']}")
-    return "Appointments:\n" + "\n".join(lines)
 
 
 if __name__ == "__main__":
@@ -100,22 +84,20 @@ if __name__ == "__main__":
     else:
         parts.append("No new postings today.")
 
-    cal = calendar_summary()
-    print(f"calendar summary: {cal if cal else '(none)'}")
-    if cal:
-        parts.append(cal)
+    events = fetch_calendar()
+    if events:
+        parts.append("Today:\n" + "\n".join(events))
 
     tasks_file = HERE / "tasks.txt"
     if tasks_file.exists() and tasks_file.read_text().strip():
-        parts.append("Today: " + tasks_file.read_text().strip())
+        parts.append("Tasks: " + tasks_file.read_text().strip())
 
     message = "\n".join(parts)
     print(f"--- message ---\n{message}\n---------------")
+    print(len(message), "characters")
 
     # --- deliver (the only send decision in the file) ---
     if dry:
         print("(dry run — not sending)")
-        print(f"--- message ---\n{message}\n---------------")
-        print(len(message), "characters")
     else:
         send(message)
