@@ -2,7 +2,7 @@ name: daily-digest
 
 on:
   schedule:
-    - cron: "0 5 * * *" # every day at 7am
+    - cron: "0 5 * * *" # 5am UTC = 6am London in summer, 5am in winter
   workflow_dispatch: {}
 
 permissions:
@@ -13,10 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
       - name: Install dependencies
         run: pip install -r requirements.txt
 
@@ -24,6 +26,7 @@ jobs:
         run: |
           echo '${{ secrets.GOOGLE_CREDENTIALS_JSON }}' > credentials.json
           echo '${{ secrets.GOOGLE_TOKEN_JSON }}' > token.json
+
       - name: Run daily digest
         env:
           TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
@@ -34,9 +37,10 @@ jobs:
           ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
           ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
           REED_API_KEY: ${{ secrets.REED_API_KEY }}
-          WORK_CALENDAR_ID: ${{ secrets.WORK_CALENDAR_ID }}
+          GCAL_ICS_URLS: ${{ secrets.GCAL_ICS_URLS }}
         run: python daily_digest.py
-      - name: persist seen.json back to repo
+
+      - name: Persist seen.json back to repo
         run: |
           git config user.name "digest-bot"
           git config user.email "digest-bot@users.noreply.github.com"
