@@ -22,7 +22,13 @@ def fetch_calendar() -> list[str]:
     events_list = []
     for url in urls:
         try:
-            response = requests.get(url, timeout=15)
+            response = requests.get(
+                url,
+                timeout=15,
+                headers={
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+                },
+            )
             calendar = Calendar.from_ical(response.content)
             events = recurring_ical_events.of(calendar).between(today_start, today_end)
             for event in events:
