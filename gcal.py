@@ -21,21 +21,24 @@ def fetch_calendar() -> list[str]:
     today_end = today_start + timedelta(days=1) - timedelta(seconds=1)
     events_list = []
     for url in urls:
-        response = requests.get(url, timeout=15)
-        calendar = Calendar.from_ical(response.content)
-        events = recurring_ical_events.of(calendar).between(today_start, today_end)
-        for event in events:
-            dt = event["DTSTART"].dt
-            dte = event["DTEND"].dt
-            summary = event.get("SUMMARY", "")
-            if isinstance(dt, datetime):
-                dt = dt.astimezone(LONDON)
-                dte = dte.astimezone(LONDON)
-                events_list.append(
-                    f"{dt.strftime('%H:%M')} - {dte.strftime('%H:%M')} {summary}"
-                )
-            elif isinstance(dt, date):
-                events_list.append(f"{summary}")
+        try:
+            response = requests.get(url, timeout=15)
+            calendar = Calendar.from_ical(response.content)
+            events = recurring_ical_events.of(calendar).between(today_start, today_end)
+            for event in events:
+                dt = event["DTSTART"].dt
+                dte = event["DTEND"].dt
+                summary = event.get("SUMMARY", "")
+                if isinstance(dt, datetime):
+                    dt = dt.astimezone(LONDON)
+                    dte = dte.astimezone(LONDON)
+                    events_list.append(
+                        f"{dt.strftime('%H:%M')} - {dte.strftime('%H:%M')} {summary}"
+                    )
+                elif isinstance(dt, date):
+                    events_list.append(f"{summary}")
+        except Exception as e:
+            print(f"Error fetching calendar from {url}: {e}")
     return sorted(events_list)
     # 3. For each URL:
     #    - requests.get() the URL (timeout=15)
